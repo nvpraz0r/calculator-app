@@ -14,7 +14,7 @@ public class Calculator implements ActionListener{
 
     Font myFont = new Font("Ink Free", Font.BOLD,30);
 
-    double num1 = 0, num2 = 0, result = 0;
+    double num1 = 0, num2 = 0, num3 = 0, result = 0;
     char operator;
 
     Calculator(){
@@ -36,7 +36,7 @@ public class Calculator implements ActionListener{
         equButton = new JButton("=");
         delButton = new JButton("Del");
         clrButton = new JButton("Clr");
-        negativeButton = new JButton("(-)");
+        negativeButton = new JButton("±");
 
         functionButtons[0] = addButton;
         functionButtons[1] = subButton;
@@ -98,7 +98,6 @@ public class Calculator implements ActionListener{
 
     public static void main(String[] args) {
         Calculator calc = new Calculator();
-
     }
 
     @Override
@@ -165,16 +164,16 @@ public class Calculator implements ActionListener{
             String str = textField.getText();
             textField.setText("");
             for (int i = 0; i < str.length() - 1; i++) {
-                textField.setText(textField.getText()+str.charAt(i));
+                textField.setText(textField.getText() + str.charAt(i));
             }
         }
 
         //note to self
         //not sure why the negative button isn't working
         if(e.getSource() == negativeButton){
-            double num = Double.parseDouble(textField.getText());
-            num*=-1;
-            textField.setText(String.valueOf(num));
+            num3 = Double.parseDouble(textField.getText());
+            num3 *= -1;
+            textField.setText(String.valueOf(num3));
         }
     }
 }
