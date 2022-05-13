@@ -168,8 +168,6 @@ public class Calculator implements ActionListener{
             }
         }
 
-        //note to self
-        //not sure why the negative button isn't working
         if(e.getSource() == negativeButton){
             num3 = Double.parseDouble(textField.getText());
             num3 *= -1;
